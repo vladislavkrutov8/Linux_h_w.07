@@ -162,6 +162,7 @@
       - wordpress:/var/www/html
     command: certonly --webroot --webroot-path=/var/www/html --email sammy@example.com --agree-tos --no-eff-email --force-renewal -d example.com -d www.example.com
    
+   
     docker-compose up --force-recreate --no-deps certbot
     
   Шаг 5 — Изменение конфигурации веб-сервера и определения службы
@@ -187,7 +188,7 @@
         }
 }
 
-server {
+    server {
             listen 443 ssl http2;
             listen [::]:443 ssl http2;
             server_name example.com www.example.com;
@@ -239,9 +240,9 @@ server {
                 expires max;
                 log_not_found off;
         }
-}
+    }
 
-  server {
+      server {
         listen 80;
         listen [::]:80;
 
@@ -255,10 +256,10 @@ server {
         location / {
                 rewrite ^ https://$host$request_uri? permanent;
         }
-}
+    }
 
-server {
-        listen 443 ssl http2;
+    server {
+            listen 443 ssl http2;
         listen [::]:443 ssl http2;
         server_name example.com www.example.com;
 
@@ -309,6 +310,6 @@ server {
                 expires max;
                 log_not_found off;
         }
-} 
+    } 
 
-  docker-compose ps
+    docker-compose ps
