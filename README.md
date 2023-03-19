@@ -52,7 +52,7 @@
                 expires max;
                 log_not_found off;
         }
-}
+    }
 
 
 
