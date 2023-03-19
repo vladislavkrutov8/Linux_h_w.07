@@ -5,9 +5,9 @@
 
 Шаг 1 — Настройка конфигурации веб-сервера
 
-  mkdir wordpress && cd wordpress
-  mkdir nginx-conf
-  nano nginx-conf/nginx.conf
+    mkdir wordpress && cd wordpress
+    mkdir nginx-conf
+    nano nginx-conf/nginx.conf
 
   server {
         listen 80;
@@ -58,10 +58,10 @@
 
 Шаг 2 — Настройка переменных среды
 
-  nano .env
-  MYSQL_ROOT_PASSWORD=*******
-  MYSQL_USER=********
-  MYSQL_PASSWORD=********
+    nano .env
+    MYSQL_ROOT_PASSWORD=*******
+    MYSQL_USER=********
+   MYSQL_PASSWORD=********
   
   git init
   nano .gitignore
